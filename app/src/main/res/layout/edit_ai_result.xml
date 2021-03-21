@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/none"
+    tools:context=".Camera.EditAIResult">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/plus_line"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/plus"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/toolbarcolor"
+            android:minHeight="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:foregroundGravity="left"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar5">
+
+            <LinearLayout
+                android:layout_width="4000dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:orientation="vertical">
+
+                <GridView
+                    android:id="@+id/gridview"
+                    android:layout_width="2000dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/bootstrap_brand_secondary_fill"
+                    android:gravity="center"
+                    android:numColumns="auto_fit"
+                    android:overScrollMode="always"
+                    android:scrollbars="horizontal|vertical"
+                    android:stretchMode="columnWidth"
+                    android:textFilterEnabled="false"
+                    app:layout_constraintBottom_toTopOf="@id/namegrid"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/grid_items">
+
+                </GridView>
+
+                <GridView
+                    android:id="@+id/namegrid"
+                    android:layout_width="2000dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:horizontalSpacing="1dp"
+                    android:numColumns="auto_fit"
+                    android:stretchMode="columnWidth"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/gridview"
+                    tools:listitem="@layout/name_items">
+
+                </GridView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/deleteAll"
+                android:layout_width="157dp"
+                android:layout_height="73dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/button_round"
+                android:text="やり直す"
+                android:textColor="@color/bootstrap_brand_secondary_fill"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/confirm2updateDB"
+                android:layout_width="157dp"
+                android:layout_height="73dp"
+                android:layout_gravity="bottom|right"
+                android:background="@drawable/button_round_red"
+                android:text="確定"
+                android:textColor="@color/bootstrap_brand_secondary_fill"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

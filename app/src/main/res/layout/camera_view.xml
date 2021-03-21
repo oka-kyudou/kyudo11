@@ -1,0 +1,63 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:opencv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/tutorial1_activity_java_surface_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        opencv:camera_id="back"
+        opencv:show_fps="false"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/shutter_send"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/button_round"
+            android:text="撮る"
+            android:textColor="@color/bootstrap_brand_secondary_fill" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/result_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/take_again_send"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/button_round"
+                android:text="再撮影"
+                android:textColor="@color/bootstrap_brand_secondary_fill"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/final_check_send"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="left|center_vertical"
+                android:background="@drawable/button_round_red"
+                android:text="確定"
+                android:textColor="@color/bootstrap_brand_secondary_fill"
+                android:visibility="gone" />
+
+        </FrameLayout>
+    </FrameLayout>
+
+</FrameLayout>

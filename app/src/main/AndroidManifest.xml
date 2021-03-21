@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="jp.ac.kyudo"
+          android:versionCode="301"
+          android:versionName="3.01">
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/camerabutton"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:requestLegacyExternalStorage="true">
+
+        <activity android:name=".MainSelect.SelectMenuActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="landscape"
+                  android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".MainSelect.prefences"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            />
+
+        <activity
+            android:name=".Camera.CameraActivity"
+            android:label="@string/app_name"
+            android:hardwareAccelerated="false"
+            android:largeHeap="true"
+            android:screenOrientation="landscape">
+
+
+
+        </activity>
+        <activity android:name=".Camera.MemberSet"
+            android:label="@string/app_name"
+            android:theme="@style/Animation"
+            android:screenOrientation="landscape">
+
+        </activity>
+        <activity android:name=".Camera.EditAIResult"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+
+
+
+
+        </activity>
+        <activity android:name=".Edit.EditRecord"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".Report.ItemListActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+
+        </activity>
+        <activity
+            android:name=".Report.ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".Report.ItemListActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="jp.ac.kyudo.Report.ItemListActivity" />
+        </activity>
+        <activity android:name=".Member.MemberLeave"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+
+        </activity>
+        <activity android:name=".Member.MemberJoinAll"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+
+        </activity>
+        <activity android:name=".Yumi.YumiMain"
+            android:label="@string/app_name"
+            android:theme="@style/Animation"
+            android:screenOrientation="landscape">
+
+        </activity>
+    </application>
+
+
+    <supports-screens android:resizeable="true"
+                      android:smallScreens="true"
+                      android:normalScreens="true"
+                      android:largeScreens="true"
+                      android:anyDensity="true" />
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front.autofocus" android:required="false"/>
+
+</manifest>

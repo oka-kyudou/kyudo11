@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:backgroundTint="@color/bootstrap_brand_secondary_fill">
+    <PreferenceCategory
+        android:background="@color/design_default_color_background"
+        android:title="記録撮影">
+        <EditTextPreference
+            android:key="tatemasu"
+            android:summary="認識する的中記録板の縦マス目個数を入力"
+            android:title="縦のマス目" />
+        <EditTextPreference
+            android:defaultValue="true"
+            android:key="yokomasu"
+            android:summary="認識する的中記録板の横マス目個数を入力"
+            android:title="横のマス目"
+            app:defaultValue="true" />
+
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:background="@color/bootstrap_brand_secondary_fill"
+        android:title="レポート">
+        <SeekBarPreference
+            android:defaultValue="true"
+            android:key="weekspan"
+            android:max="10"
+            android:scrollbarStyle="insideOverlay"
+            android:summary="何周間単位で分析を行うかを設定"
+            android:title="分析間隔"
+            app:adjustable="true"
+            app:defaultValue="true"
+            app:showSeekBarValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

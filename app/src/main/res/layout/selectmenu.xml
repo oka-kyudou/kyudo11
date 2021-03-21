@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrap="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/bootstrap_brand_secondary_fill"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/toolbarcolor"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+
+            bootstrap:titleTextColor="@color/bootstrap_brand_secondary_fill" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/printbutton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/print"
+                bootstrap:layout_constraintBottom_toBottomOf="parent"
+                bootstrap:layout_constraintDimensionRatio="3:1"
+                bootstrap:layout_constraintEnd_toStartOf="@+id/setting_button"
+                bootstrap:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/setting_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/setting"
+                bootstrap:layout_constraintBottom_toBottomOf="parent"
+                bootstrap:layout_constraintDimensionRatio="1:1"
+                bootstrap:layout_constraintEnd_toEndOf="parent"
+                bootstrap:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/savebackup"
+                android:layout_width="104dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/group_1"
+                bootstrap:layout_constraintBottom_toBottomOf="parent"
+                bootstrap:layout_constraintStart_toEndOf="@+id/restorebackup"
+                bootstrap:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/restorebackup"
+                android:layout_width="115dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/group_2"
+                android:visibility="visible"
+                bootstrap:layout_constraintBottom_toBottomOf="parent"
+                bootstrap:layout_constraintEnd_toStartOf="@+id/savebackup"
+                bootstrap:layout_constraintStart_toStartOf="parent"
+                bootstrap:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            bootstrap:layout_constraintBottom_toBottomOf="parent"
+            bootstrap:layout_constraintEnd_toEndOf="parent"
+            bootstrap:layout_constraintStart_toStartOf="parent"
+            bootstrap:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bootstrap_brand_secondary_fill"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/yumi_send"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:background="@drawable/buttonmain1"
+                        android:stateListAnimator="@android:anim/fade_in"
+                        bootstrap:layout_constraintBottom_toTopOf="@+id/report_send"
+                        bootstrap:layout_constraintEnd_toEndOf="parent"
+                        bootstrap:layout_constraintHorizontal_bias="0.0"
+                        bootstrap:layout_constraintStart_toStartOf="parent"
+                        bootstrap:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/report_send"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:background="@drawable/buttonmain2"
+                        bootstrap:layout_constraintBottom_toBottomOf="parent"
+                        bootstrap:layout_constraintDimensionRatio="983:295"
+                        bootstrap:layout_constraintEnd_toEndOf="parent"
+                        bootstrap:layout_constraintStart_toStartOf="parent"
+                        bootstrap:layout_constraintTop_toBottomOf="@id/yumi_send" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/frameLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2">
+
+                    <ImageButton
+                        android:id="@+id/camera_send"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/camerabutton"
+                        android:paddingLeft="90dp"
+                        android:paddingRight="90dp"
+                        android:visibility="visible"
+                        bootstrap:layout_constraintBottom_toBottomOf="parent"
+                        bootstrap:layout_constraintDimensionRatio="1:1"
+                        bootstrap:layout_constraintEnd_toEndOf="parent"
+                        bootstrap:layout_constraintStart_toStartOf="parent"
+                        bootstrap:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/edit_send"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:background="@drawable/buttonmain4"
+                        bootstrap:layout_constraintBottom_toTopOf="@id/member_send"
+                        bootstrap:layout_constraintEnd_toEndOf="parent"
+                        bootstrap:layout_constraintHorizontal_bias="1.0"
+                        bootstrap:layout_constraintStart_toStartOf="parent"
+                        bootstrap:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/member_send"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:adjustViewBounds="false"
+                        android:background="@drawable/buttonmain3"
+                        bootstrap:layout_constraintBottom_toBottomOf="parent"
+                        bootstrap:layout_constraintDimensionRatio="983:295"
+                        bootstrap:layout_constraintEnd_toEndOf="parent"
+                        bootstrap:layout_constraintStart_toStartOf="parent"
+                        bootstrap:layout_constraintTop_toBottomOf="@id/edit_send" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/frame"
+            android:orientation="vertical"
+            bootstrap:layout_constraintBottom_toTopOf="@id/constraintLayout"
+            bootstrap:layout_constraintEnd_toEndOf="parent"
+            bootstrap:layout_constraintStart_toStartOf="parent"
+            bootstrap:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="今週の累計的中" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal">
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <!-- 枠線 -->
+        <item name="colorControlNormal">@color/bootstrap_brand_secondary_fill</item>
+        <!-- チェック時の色 -->
+        <item name="colorControlActivated">@color/bootstrap_brand_secondary_fill</item>
+    </style>
+</resources>

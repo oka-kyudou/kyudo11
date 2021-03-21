@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        relese1 {
+            storeFile file('/Volumes/Kota_SSD/Coding/android/keystorepath_kyudo')
+            storePassword 'Kotaro08026300265'
+            keyAlias = 'key0'
+            keyPassword 'Kotaro08026300265'
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "jp.ac.kyudo"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.relese1
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+        configurations {
+            all*.exclude group:'org.opencv', module:"org.bytedeco:opencv:4.3.0-1.5.3"
+            all*.exclude group:'com.quickbirdstudios:opencv:3.4.4-contrib', module:"jetified-opencv-3.4.4-contrib-runtime.jar"
+        }
+    }
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.quickbirdstudios:opencv:3.4.4-contrib'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.beardedhen:androidbootstrap:2.3.2'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'commons-io:commons-io:2.4'
+    implementation 'org.apache.commons:commons-lang3:3.4'
+    implementation "org.tensorflow:tensorflow-android:1.13.1"
+    implementation 'androidx.preference:preference:1.0.0'
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+//    implementation(group: 'org.bytedeco', name: 'javacv-platform', version: '1.5.3') {
+////        exclude group:'org.opencv',module:'android'
+////        exclude group:'org.opencv',module:'xphoto'
+////    }
+//
+//    }
+}
